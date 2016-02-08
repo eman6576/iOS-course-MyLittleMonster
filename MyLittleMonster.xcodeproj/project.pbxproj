@@ -13,6 +13,7 @@
 		887CEAB41C6718D200D1CA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887CEAB31C6718D200D1CA10 /* Assets.xcassets */; };
 		887CEAB71C6718D200D1CA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CEAB51C6718D200D1CA10 /* LaunchScreen.storyboard */; };
 		88FDD4DA1C69275E007353A3 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDD4D91C69275E007353A3 /* DragImage.swift */; };
+		88FDD4DC1C692BD0007353A3 /* MonsterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDD4DB1C692BD0007353A3 /* MonsterImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		887CEAB61C6718D200D1CA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		887CEAB81C6718D200D1CA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88FDD4D91C69275E007353A3 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
+		88FDD4DB1C692BD0007353A3 /* MonsterImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				887CEAB51C6718D200D1CA10 /* LaunchScreen.storyboard */,
 				887CEAB81C6718D200D1CA10 /* Info.plist */,
 				88FDD4D91C69275E007353A3 /* DragImage.swift */,
+				88FDD4DB1C692BD0007353A3 /* MonsterImage.swift */,
 			);
 			path = MyLittleMonster;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FDD4DC1C692BD0007353A3 /* MonsterImage.swift in Sources */,
 				887CEAAF1C6718D200D1CA10 /* ViewController.swift in Sources */,
 				88FDD4DA1C69275E007353A3 /* DragImage.swift in Sources */,
 				887CEAAD1C6718D200D1CA10 /* AppDelegate.swift in Sources */,
