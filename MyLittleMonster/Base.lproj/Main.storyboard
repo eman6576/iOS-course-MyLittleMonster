@@ -66,7 +66,7 @@
                                     <rect key="frame" x="209" y="-60" width="182" height="50"/>
                                 </variation>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="Tqt-su-E3g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="Tqt-su-E3g" customClass="MonsterImage" customModule="MyLittleMonster" customModuleProvider="target">
                                 <rect key="frame" x="55" y="192" width="619" height="361"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="688" id="2MY-9w-P7l"/>
@@ -145,9 +145,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="foodImage" destination="baA-uO-78O" id="U0e-cW-v7c"/>
-                        <outlet property="heartImage" destination="oh7-HY-FOG" id="T0F-Ua-IrQ"/>
+                        <outlet property="foodImageView" destination="baA-uO-78O" id="Vjx-u4-UFE"/>
+                        <outlet property="heartImageView" destination="oh7-HY-FOG" id="bPJ-jp-aRv"/>
                         <outlet property="monsterImageView" destination="Tqt-su-E3g" id="Klx-mV-4yc"/>
+                        <outlet property="penalty1ImageView" destination="wFc-sC-ftp" id="YfM-L5-dyX"/>
+                        <outlet property="penalty2ImageView" destination="ofu-pn-681" id="63m-cv-UMk"/>
+                        <outlet property="penalty3ImageView" destination="Xau-3u-8Yz" id="AF8-eK-n8Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
