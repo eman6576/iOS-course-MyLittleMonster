@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var monsterImageView: MonsterImage!
@@ -22,6 +23,14 @@ class ViewController: UIViewController {
     
     var penalties = 0
     var timer: NSTimer!
+    var monsterHappy = false
+    var currentItem: UInt32 = 0
+    
+    var musicPlayer: AVAudioPlayer!
+    var soundEffectBite: AVAudioPlayer!
+    var soundEffectHeart: AVAudioPlayer!
+    var soundEffectDeath: AVAudioPlayer!
+    var soundEffectSkull: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +44,41 @@ class ViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "onTargetDropped", object: nil)
         
+        do {
+            try musicPlayer = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cave-music", ofType: "mp3")!))
+            try soundEffectBite = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bite", ofType: "wav")!))
+            try soundEffectHeart = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
+            try soundEffectDeath = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("death", ofType: "wav")!))
+            try soundEffectSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
+            
+            musicPlayer.prepareToPlay()
+            musicPlayer.play()
+            
+            soundEffectBite.prepareToPlay()
+            soundEffectHeart.prepareToPlay()
+            soundEffectDeath.prepareToPlay()
+            soundEffectSkull.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
         startTimer()
     }
     
     func itemDroppedOnCharacter(notification: AnyObject) {
+        monsterHappy = true
+        startTimer()
         
+        foodImageView.alpha = DIM_ALPHA
+        foodImageView.userInteractionEnabled = false
+        heartImageView.alpha = DIM_ALPHA
+        heartImageView.userInteractionEnabled = false
+        
+        if currentItem == 0 {
+            soundEffectHeart.play()
+        } else {
+            soundEffectBite.play()
+        }
     }
     
     func startTimer() {
@@ -51,31 +90,55 @@ class ViewController: UIViewController {
     }
     
     func changeGameState() {
-        penalties++
+        if !monsterHappy {
+            penalties++
+            
+            soundEffectSkull.play()
+            
+            if penalties == 1 {
+                penalty1ImageView.alpha = OPAQUE
+                penalty2ImageView.alpha = DIM_ALPHA
+            } else if penalties == 2 {
+                penalty2ImageView.alpha = OPAQUE
+                penalty3ImageView.alpha = DIM_ALPHA
+            } else if penalties >= 3 {
+                penalty3ImageView.alpha = OPAQUE
+            } else {
+                penalty1ImageView.alpha = DIM_ALPHA
+                penalty2ImageView.alpha = DIM_ALPHA
+                penalty3ImageView.alpha = DIM_ALPHA
+            }
+            
+            if penalties >= MAX_PENALITIES {
+                timer.invalidate()
+                gameOver()
+            }
+        }
         
-        if penalties == 1 {
-            penalty1ImageView.alpha = OPAQUE
-            penalty2ImageView.alpha = DIM_ALPHA
-        } else if penalties == 2 {
-            penalty2ImageView.alpha = OPAQUE
-            penalty3ImageView.alpha = DIM_ALPHA
-        } else if penalties >= 3 {
-            penalty3ImageView.alpha = OPAQUE
+        let rand = arc4random_uniform(2)
+        
+        if rand == 0 {
+            foodImageView.alpha = DIM_ALPHA
+            foodImageView.userInteractionEnabled = false
+            
+            heartImageView.alpha = OPAQUE
+            heartImageView.userInteractionEnabled = true
         } else {
-            penalty1ImageView.alpha = DIM_ALPHA
-            penalty2ImageView.alpha = DIM_ALPHA
-            penalty3ImageView.alpha = DIM_ALPHA
+            heartImageView.alpha = DIM_ALPHA
+            heartImageView.userInteractionEnabled = false
+            
+            foodImageView.alpha = OPAQUE
+            foodImageView.userInteractionEnabled = true
         }
         
-        if penalties >= MAX_PENALITIES {
-            timer.invalidate()
-            gameOver()
-        }
+        currentItem = rand
+        monsterHappy = false
     }
     
     func gameOver() {
         timer.invalidate()
         monsterImageView.playDeathAnimation()
+        soundEffectDeath.play()
     }
 }
 
