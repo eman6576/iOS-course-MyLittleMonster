@@ -12,6 +12,11 @@
 		887CEAB21C6718D200D1CA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CEAB01C6718D200D1CA10 /* Main.storyboard */; };
 		887CEAB41C6718D200D1CA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887CEAB31C6718D200D1CA10 /* Assets.xcassets */; };
 		887CEAB71C6718D200D1CA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CEAB51C6718D200D1CA10 /* LaunchScreen.storyboard */; };
+		88D0F9741C7FCE7900FF23C4 /* bite.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88D0F96F1C7FCE7900FF23C4 /* bite.wav */; };
+		88D0F9751C7FCE7900FF23C4 /* cave-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88D0F9701C7FCE7900FF23C4 /* cave-music.mp3 */; };
+		88D0F9761C7FCE7900FF23C4 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88D0F9711C7FCE7900FF23C4 /* death.wav */; };
+		88D0F9771C7FCE7900FF23C4 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88D0F9721C7FCE7900FF23C4 /* heart.wav */; };
+		88D0F9781C7FCE7900FF23C4 /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88D0F9731C7FCE7900FF23C4 /* skull.wav */; };
 		88FDD4DA1C69275E007353A3 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDD4D91C69275E007353A3 /* DragImage.swift */; };
 		88FDD4DC1C692BD0007353A3 /* MonsterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDD4DB1C692BD0007353A3 /* MonsterImage.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +29,11 @@
 		887CEAB31C6718D200D1CA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		887CEAB61C6718D200D1CA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		887CEAB81C6718D200D1CA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88D0F96F1C7FCE7900FF23C4 /* bite.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bite.wav; sourceTree = "<group>"; };
+		88D0F9701C7FCE7900FF23C4 /* cave-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cave-music.mp3"; sourceTree = "<group>"; };
+		88D0F9711C7FCE7900FF23C4 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		88D0F9721C7FCE7900FF23C4 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
+		88D0F9731C7FCE7900FF23C4 /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
 		88FDD4D91C69275E007353A3 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
 		88FDD4DB1C692BD0007353A3 /* MonsterImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +68,11 @@
 		887CEAAB1C6718D200D1CA10 /* MyLittleMonster */ = {
 			isa = PBXGroup;
 			children = (
+				88D0F96F1C7FCE7900FF23C4 /* bite.wav */,
+				88D0F9701C7FCE7900FF23C4 /* cave-music.mp3 */,
+				88D0F9711C7FCE7900FF23C4 /* death.wav */,
+				88D0F9721C7FCE7900FF23C4 /* heart.wav */,
+				88D0F9731C7FCE7900FF23C4 /* skull.wav */,
 				887CEAAC1C6718D200D1CA10 /* AppDelegate.swift */,
 				887CEAAE1C6718D200D1CA10 /* ViewController.swift */,
 				887CEAB01C6718D200D1CA10 /* Main.storyboard */,
@@ -129,6 +144,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88D0F9781C7FCE7900FF23C4 /* skull.wav in Resources */,
+				88D0F9741C7FCE7900FF23C4 /* bite.wav in Resources */,
+				88D0F9761C7FCE7900FF23C4 /* death.wav in Resources */,
+				88D0F9771C7FCE7900FF23C4 /* heart.wav in Resources */,
+				88D0F9751C7FCE7900FF23C4 /* cave-music.mp3 in Resources */,
 				887CEAB71C6718D200D1CA10 /* LaunchScreen.storyboard in Resources */,
 				887CEAB41C6718D200D1CA10 /* Assets.xcassets in Resources */,
 				887CEAB21C6718D200D1CA10 /* Main.storyboard in Resources */,
