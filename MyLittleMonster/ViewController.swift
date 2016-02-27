@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1ImageView: UIImageView!
     @IBOutlet weak var penalty2ImageView: UIImageView!
     @IBOutlet weak var penalty3ImageView: UIImageView!
+    @IBOutlet weak var restartButton: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -38,10 +39,6 @@ class ViewController: UIViewController {
         foodImageView.dropTarget = monsterImageView
         heartImageView.dropTarget = monsterImageView
         
-        penalty1ImageView.alpha = DIM_ALPHA
-        penalty2ImageView.alpha = DIM_ALPHA
-        penalty3ImageView.alpha = DIM_ALPHA
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "onTargetDropped", object: nil)
         
         do {
@@ -61,6 +58,21 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
         }
+        
+        startNewGame()
+    }
+    
+    @IBAction func onRestartButtonTapped(sender: UIButton!) {
+        restartButton.hidden = true
+        penalties = 0
+        monsterImageView.playIdleAnimation()
+        startNewGame()
+    }
+    
+    func startNewGame() {
+        penalty1ImageView.alpha = DIM_ALPHA
+        penalty2ImageView.alpha = DIM_ALPHA
+        penalty3ImageView.alpha = DIM_ALPHA
         
         startTimer()
     }
@@ -139,6 +151,7 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImageView.playDeathAnimation()
         soundEffectDeath.play()
+        restartButton.hidden = false
     }
 }
 
