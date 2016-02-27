@@ -98,6 +98,22 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l4X-BM-Bwd">
+                                <rect key="frame" x="196" y="254" width="204" height="41"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQh-9n-Ded" userLabel="restartButton">
+                                        <rect key="frame" x="-198" y="-254" width="487" height="0.0"/>
+                                        <state key="normal" image="Restart"/>
+                                        <connections>
+                                            <action selector="onRestartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="itK-DW-vrz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="VpD-8k-XAi"/>
+                                    <constraint firstAttribute="width" constant="204" id="X1l-bi-YGI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,12 +129,14 @@
                             <constraint firstItem="EGv-A0-UEK" firstAttribute="top" secondItem="anI-Sh-BnV" secondAttribute="bottom" constant="15" id="Rq0-YB-mo6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EGv-A0-UEK" secondAttribute="trailing" constant="9" id="RvT-Fr-nlv"/>
                             <constraint firstItem="EGv-A0-UEK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YOH-iO-cvC"/>
+                            <constraint firstItem="K0k-mX-nlO" firstAttribute="top" secondItem="l4X-BM-Bwd" secondAttribute="bottom" constant="242" id="bJx-A9-BI9"/>
                             <constraint firstItem="EGv-A0-UEK" firstAttribute="top" secondItem="anI-Sh-BnV" secondAttribute="bottom" constant="15" id="cfh-Jw-eGW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K0k-mX-nlO" secondAttribute="bottom" id="cpj-2B-b3J"/>
                             <constraint firstItem="MQP-yS-8gx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f01-L1-Bjc"/>
                             <constraint firstItem="EGv-A0-UEK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f9A-XK-zS5"/>
                             <constraint firstAttribute="trailing" secondItem="K0k-mX-nlO" secondAttribute="trailing" id="fB3-yo-OA3"/>
                             <constraint firstItem="anI-Sh-BnV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="inZ-4A-sYM"/>
+                            <constraint firstItem="l4X-BM-Bwd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sfN-gf-HsC"/>
                             <constraint firstItem="94d-uO-Laf" firstAttribute="centerY" secondItem="anI-Sh-BnV" secondAttribute="centerY" id="w6A-Wa-dgM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MQP-yS-8gx" secondAttribute="bottom" id="zZp-Nz-Szs"/>
                         </constraints>
@@ -151,14 +169,16 @@
                         <outlet property="penalty1ImageView" destination="wFc-sC-ftp" id="YfM-L5-dyX"/>
                         <outlet property="penalty2ImageView" destination="ofu-pn-681" id="63m-cv-UMk"/>
                         <outlet property="penalty3ImageView" destination="Xau-3u-8Yz" id="AF8-eK-n8Y"/>
+                        <outlet property="restartButton" destination="vQh-9n-Ded" id="YKX-Re-hhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="336"/>
+            <point key="canvasLocation" x="152" y="220"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Restart" width="487" height="94"/>
         <image name="bg" width="768" height="1024"/>
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>
